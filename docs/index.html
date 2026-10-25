@@ -1,288 +1,156 @@
 <!DOCTYPE html>
 <html lang="rw">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>N-NUTRITION & MARKETING - Gusaba Akazi</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            background: #f1f4f3;
-            color: #222;
-        }
-
-        .page {
-            width: 100%;
-            max-width: 750px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .header {
-            background: linear-gradient(135deg, #087f5b, #0ca678);
-            color: white;
-            text-align: center;
-            padding: 28px 20px;
-        }
-
-        .header h1 {
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
-
-        .header p {
-            font-size: 16px;
-        }
-
-        .photo-container {
-            width: 100%;
-            padding: 18px;
-            background: white;
-        }
-
-        .photo-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 12px;
-        }
-
-        .announcement {
-            padding: 25px;
-            text-align: center;
-        }
-
-        .announcement h2 {
-            color: #087f5b;
-            margin-bottom: 15px;
-            font-size: 23px;
-        }
-
-        .announcement p {
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        .form-section {
-            padding: 25px;
-        }
-
-        .form-section h2 {
-            color: #087f5b;
-            text-align: center;
-            margin-bottom: 22px;
-            font-size: 23px;
-        }
-
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 7px;
-            margin-top: 18px;
-        }
-
-        input {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #ccc;
-            border-radius: 9px;
-            font-size: 16px;
-        }
-
-        input:focus {
-            outline: none;
-            border: 2px solid #087f5b;
-        }
-
-        .submit-button {
-            width: 100%;
-            margin-top: 28px;
-            padding: 16px;
-            border: none;
-            border-radius: 9px;
-            background: #087f5b;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .submit-button:hover {
-            background: #066b4d;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 14px;
-        }
-
-        @media (max-width: 600px) {
-            .page {
-                padding: 8px;
-            }
-
-            .header h1 {
-                font-size: 22px;
-            }
-
-            .announcement p {
-                font-size: 16px;
-            }
-
-            .form-section,
-            .announcement {
-                padding: 20px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07552d">
+<title>Nature Nutrition For Life | Gusaba Rendez-vous</title>
+<style>
+:root{--green:#07552d;--deep:#003b22;--leaf:#138044;--lime:#a5d900;--gold:#ffd51a;--pale:#edf7e7;--ink:#12462d;--muted:#68796e;--line:#d9e8dc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#f5faf4}
+a{color:inherit}
+.site-header{background:#fff;box-shadow:0 2px 14px #083d2010;position:relative;z-index:2}
+.nav{max-width:1160px;margin:auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand-mark{width:43px;height:43px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(145deg,#168749,#004125);color:#fff;font-size:25px}
+.brand-name{font-weight:900;letter-spacing:.03em;color:var(--green);line-height:1.1}
+.brand-name small{display:block;color:#66836d;font-size:11px;letter-spacing:.14em;margin-top:4px}
+.nav-pill{font-size:13px;font-weight:800;background:#edf7e7;color:var(--green);padding:10px 14px;border-radius:999px}
+main{max-width:1160px;margin:0 auto;padding:22px 22px 44px}
+.hero{overflow:hidden;border-radius:24px;box-shadow:0 16px 35px #063f221a;background:linear-gradient(120deg,#063d24,#08783b);color:#fff;min-height:220px;display:grid;place-items:center;text-align:center;padding:32px 22px}
+.hero h2{font-size:clamp(28px,5vw,52px);line-height:1.08;margin:0;font-weight:900;letter-spacing:-.03em}
+.hero p{font-size:clamp(13px,2vw,18px);letter-spacing:.12em;margin:13px 0 0;color:#e1f2d7}
+.intro{text-align:center;padding:27px 12px 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#147744;background:#e6f4de;border:1px solid #d6ebcb;border-radius:999px;padding:8px 13px;font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.intro h1{font-size:clamp(27px,4.3vw,44px);line-height:1.12;letter-spacing:-.035em;margin:13px 0 9px;color:#064a2a}
+.intro h1 span{color:#d3a900}
+.intro p{margin:0 auto;color:#617568;font-size:16px;line-height:1.65;max-width:630px}
+.content{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:24px;align-items:stretch}
+.info-card,.form-card{border:1px solid #e0ebe1;border-radius:24px;background:#fff;box-shadow:0 12px 32px #164a2910}
+.info-card{padding:30px;background:linear-gradient(155deg,#06472a,#00733b);color:#fff;position:relative;overflow:hidden}
+.info-card:after{content:"";position:absolute;width:240px;height:240px;border:35px solid #ffffff0b;border-radius:50%;right:-100px;bottom:-100px}
+.info-card h2{font-size:25px;line-height:1.2;margin:0 0 12px}
+.info-card>p{color:#e0f0e4;line-height:1.7;margin:0 0 25px}
+.benefit{display:flex;gap:13px;align-items:flex-start;margin:19px 0;position:relative;z-index:1}
+.benefit-icon{width:39px;height:39px;flex:0 0 39px;display:grid;place-items:center;background:#ffffff1b;border:1px solid #ffffff2b;border-radius:13px;font-size:20px}
+.benefit strong{display:block;font-size:15px;margin:1px 0 5px}
+.benefit span{display:block;color:#d9eee0;font-size:13px;line-height:1.45}
+.info-note{margin-top:28px;padding-top:20px;border-top:1px solid #ffffff35;color:#e4f2e6;font-size:13px;line-height:1.6;position:relative;z-index:1}
+.form-card{padding:clamp(20px,3vw,34px)}
+.form-heading{display:flex;gap:13px;align-items:center;margin-bottom:23px}
+.calendar-badge{width:51px;height:51px;display:grid;place-items:center;background:#e7f5e2;color:#08723b;border-radius:16px;font-size:27px}
+.form-heading h2{font-size:23px;margin:0 0 5px;color:#08492b}
+.form-heading p{font-size:13px;margin:0;color:var(--muted)}
+.field{margin-bottom:17px}
+label{display:block;font-size:14px;font-weight:800;margin:0 0 8px;color:#174c30}
+.req{color:#d9382b}
+.input-wrap{position:relative}
+.input-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:17px;color:#41835b;pointer-events:none}
+input{width:100%;min-height:51px;border:1px solid #cfdfd2;border-radius:13px;background:#fbfdfb;padding:13px 14px 13px 43px;font:inherit;font-size:15px;color:#143e28;outline:none;transition:border .15s,box-shadow .15s}
+input::placeholder{color:#96a39a}
+input:focus{border-color:#138044;box-shadow:0 0 0 4px #13804418;background:#fff}
+.date-field{background:#f0f8eb;border:1px solid #dcebd4;border-radius:17px;padding:15px;margin:4px 0 20px}
+.date-field label{font-size:15px}
+.date-field input{background:#fff}
+.helper{font-size:12px;color:#718477;margin:8px 0 0;line-height:1.5}
+.submit{width:100%;border:0;border-radius:14px;min-height:55px;background:linear-gradient(100deg,#00552b,#0b8744);color:#fff;font-size:16px;font-weight:900;letter-spacing:.035em;cursor:pointer;box-shadow:0 5px 0 #a7d800;transition:transform .15s,filter .15s}
+.submit:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.submit:disabled{opacity:.65;cursor:wait;transform:none}
+.message{display:none;margin-top:16px;border-radius:12px;padding:13px 14px;font-size:13px;line-height:1.55;font-weight:700}
+.message.show{display:block}.message.success{background:#e7f7e9;color:#07552d}.message.error{background:#fff0ef;color:#a32118}
+.privacy{font-size:11px;line-height:1.5;text-align:center;color:#7a8b7f;margin:15px 0 0}
+.footer{margin-top:25px;padding:25px 18px;border-radius:22px;background:#003d23;color:#fff;text-align:center;overflow:hidden}
+.footer-values{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 27px}
+.footer-values span{font-size:12px;font-weight:800;letter-spacing:.04em}
+.footer-values b{color:var(--gold);font-size:18px;margin-right:6px}
+.footer-line{height:1px;max-width:490px;margin:18px auto;background:linear-gradient(90deg,transparent,#8fcf39,transparent)}
+.footer em{font-size:clamp(19px,3vw,27px);font-weight:700}
+.footer p{font-size:12px;color:#cde5d3;margin:9px 0 0}
+@media(max-width:800px){main{padding:14px 13px 30px}.content{grid-template-columns:1fr}.info-card{padding:24px}.info-card h2{font-size:23px}.hero{border-radius:17px}.intro{padding:23px 6px}.form-card{padding:22px}.nav{padding:11px 15px}}
+@media(max-width:420px){.brand-name{font-size:13px}.nav-pill{font-size:11px;padding:8px 10px}.intro p{font-size:14px}.form-heading h2{font-size:20px}}
+</style>
 </head>
-
 <body>
-
-<div class="page">
-
-    <div class="card">
-
-        <div class="header">
-            <h1>N-NUTRITION & MARKETING</h1>
-            <p>Amahirwe yo kubona akazi</p>
-        </div>
-
-        <!-- YOUR PHOTO -->
-        <div class="photo-container">
-    <img src="./photo.jpg" alt="N-NUTRITION & MARKETING" style="width:100%; height:auto; display:block;">
-</div>
-
-        <!-- ANNOUNCEMENT -->
-        <div class="announcement">
-
-            <h2>📢 ITANGAZO</h2>
-
-            <p>
-                <strong>
-                    Ikigo N-NUTRITION & MARKETING kirigutanga amahirwe
-                    ku Banyarwanda bashaka akazi mu kubafasha gucuruza
-                    ibikoresho bya electronic na nature products.
-                </strong>
-            </p>
-
-        </div>
-
-        <!-- APPLICATION FORM -->
-        <div class="form-section">
-
-            <h2>📝 IFISHI YO GUSABA AKAZI</h2>
-
-            <form id="applicationForm">
-
-                <label for="fullname">
-                    Amazina yose
-                </label>
-
-                <input
-                    type="text"
-                    id="fullname"
-                    name="fullname"
-                    placeholder="Andika amazina yawe yose"
-                    required
-                >
-
-                <label for="phone">
-                    Nimero ya telefoni
-                </label>
-
-                <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="Urugero: 078XXXXXXX"
-                    required
-                >
-
-                <label for="district">
-                    Akarere
-                </label>
-
-                <input
-                    type="text"
-                    id="district"
-                    name="district"
-                    placeholder="Andika Akarere utuyemo"
-                    required
-                >
-
-                <button
-                    type="submit"
-                    class="submit-button">
-                    OHEREZA UBUSABE
-                </button>
-
-           </form>
-
-        </div>
-
-        <div class="footer">
-            © 2026 N-NUTRITION & MARKETING
-        </div>
-
-    </div>
-
-</div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="#" aria-label="Nature Nutrition For Life home">
+      <span class="brand-mark" aria-hidden="true">❧</span>
+      <span class="brand-name">NATURE NUTRITION<small>FOR LIFE</small></span>
+    </a>
+    <span class="nav-pill">● UBuzima buzira umuze</span>
+  </nav>
+</header>
+<main>
+  <section class="hero" aria-label="Nature Nutrition For Life banner">
+    <div><h2>NATURE NUTRITION FOR LIFE</h2><p>GOOD NUTRITION TODAY, A BETTER TOMORROW</p></div>
+  </section>
+  <section class="intro">
+    <span class="eyebrow">✦ Gusaba rendez-vous</span>
+    <h1>Hitamo igihe cyawe.<br><span>Tugufashe kubaho neza.</span></h1>
+    <p>Uzuza amakuru yawe hanyuma uhitemo itariki wifuza. Tuzakoresha amakuru watanze kugira ngo tugufashe gukomeza urugendo rw’ubuzima buzira umuze.</p>
+  </section>
+  <section class="content">
+    <aside class="info-card">
+      <h2>Murakaza neza muri Nature Nutrition For Life!</h2>
+      <p>Intambwe nto mu mirire myiza ishobora kugufasha kubaho ubuzima bwiza buri munsi.</p>
+      <div class="benefit"><div class="benefit-icon">🌿</div><div><strong>Imirire myiza</strong><span>Menya akamaro ko kwita ku mirire yawe.</span></div></div>
+      <div class="benefit"><div class="benefit-icon">💚</div><div><strong>Ubuzima buzira umuze</strong><span>Hitamo gahunda ijyanye n’igihe cyawe.</span></div></div>
+      <div class="benefit"><div class="benefit-icon">📅</div><div><strong>Itariki wihitiyemo</strong><span>Koresha kalendari uhitemo umunsi wifuza.</span></div></div>
+      <div class="info-note">✦ Uzuza buri mwanya uriho akamenyetso ka <b>*</b>. Amakuru yawe azoherezwa neza nyuma yo gukanda buto.</div>
+    </aside>
+    <section class="form-card">
+      <div class="form-heading"><div class="calendar-badge" aria-hidden="true">▦</div><div><h2>Amakuru yawe</h2><p>Ibice byose bifite * birasabwa.</p></div></div>
+      <form id="appointmentForm">
+        <div class="field"><label for="fullname">Amazina yawe <span class="req">*</span></label><div class="input-wrap"><span class="input-icon" aria-hidden="true">♙</span><input id="fullname" name="fullname" type="text" placeholder="Andika amazina yawe" autocomplete="name" required></div></div>
+        <div class="field"><label for="district">Akarere <span class="req">*</span></label><div class="input-wrap"><span class="input-icon" aria-hidden="true">⌖</span><input id="district" name="district" type="text" placeholder="Andika akarere kawe" autocomplete="address-level2" required></div></div>
+        <div class="field"><label for="phone">Nimero ya telephone <span class="req">*</span></label><div class="input-wrap"><span class="input-icon" aria-hidden="true">☎</span><input id="phone" name="phone" type="tel" placeholder="Urugero: 07..." autocomplete="tel" required></div></div>
+        <div class="field"><label for="nationalId">Indangamuntu <span class="req">*</span></label><div class="input-wrap"><span class="input-icon" aria-hidden="true">▤</span><input id="nationalId" name="nationalId" type="text" inputmode="numeric" placeholder="Andika nimero y’indangamuntu" required></div></div>
+        <div class="date-field"><label for="appointmentDate">Itariki ya rendez-vous <span class="req">*</span></label><div class="input-wrap"><span class="input-icon" aria-hidden="true">▦</span><input id="appointmentDate" name="appointmentDate" type="date" required></div><p class="helper">Kanda ahari itariki kugira ngo ufungure kalendari uhitemo umunsi wifuza.</p></div>
+        <button id="submitButton" class="submit" type="submit">KOHEZA UBUSAbe ↗</button>
+        <div id="formMessage" class="message" role="status" aria-live="polite"></div>
+        <p class="privacy">Amakuru yawe azoherezwa muri sisitemu yo kwakira ubusabe bwa rendez-vous.</p>
+      </form>
+    </section>
+  </section>
+  <footer class="footer"><div class="footer-values"><span><b>❧</b> IMIRIRE MYIZA</span><span><b>✚</b> UBUZIMA BUZIRA UMUZE</span><span><b>✣</b> IMBARAGA NYINGI</span><span><b>☺</b> UBUZIMA BWIZA</span></div><div class="footer-line"></div><em>Nature Nutrition For Life</em><p>Good Nutrition Today, A Better Tomorrow</p></footer>
+</main>
 <script>
 const SUPABASE_URL = "https://ffthwgjczgfzenqzzhto.supabase.co";
-const SUPABASE_KEY = "sb_publishable_OSFOuk4xaJcPey_GB8Y4Rg_d_2ZAuDV";
-
-const supabaseClient = supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
-
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("applicationForm").addEventListener("submit", async function(event) {
-    event.preventDefault();
-
-    const amazina = document.getElementById("fullname").value;
-    const telefone = document.getElementById("phone").value;
-    const akarere = document.getElementById("district").value;
-
-    const { error } = await supabaseClient
-        .from("submissions")
-        .insert([
-            {
-                "amazina yose": amazina,
-    "nimero yatelefoni": telefone,
-    "Akarere": akarere
-            }
-        ]);
-
-    if (error) {
-        alert("Habaye ikibazo: " + error.message);
-    } else {
-        alert("Ubusabe bwawe bwoherejwe neza!");
-        document.getElementById("applicationForm").reset();
-    }
+const SUPABASE_ANON_KEY = "sb_publishable_OSFOuk4xaJcPey_GB8Y4Rg_d_2ZAuDV";
+const form = document.getElementById("appointmentForm");
+const dateInput = document.getElementById("appointmentDate");
+const message = document.getElementById("formMessage");
+const submitButton = document.getElementById("submitButton");
+function localDateString(){const now=new Date();return new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10)}
+dateInput.min=localDateString();
+function showMessage(text,kind){message.textContent=text;message.className="message show "+kind}
+form.addEventListener("submit",async(event)=>{
+  event.preventDefault();
+  if(!form.reportValidity())return;
+  if(dateInput.value<localDateString()){showMessage("Hitamo itariki y’uyu munsi cyangwa iri imbere.","error");return}
+  submitButton.disabled=true;submitButton.textContent="Tegereza...";message.className="message";
+  const payload={
+    full_name:document.getElementById("fullname").value.trim(),
+    district:document.getElementById("district").value.trim(),
+    phone:document.getElementById("phone").value.trim(),
+    national_id:document.getElementById("nationalId").value.trim(),
+    appointment_date:dateInput.value
+  };
+  try{
+    const response=await fetch(SUPABASE_URL.replace(/\/$/,"")+"/rest/v1/appointments",{
+      method:"POST",
+      headers:{"apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+SUPABASE_ANON_KEY,"Content-Type":"application/json","Prefer":"return=minimal"},
+      body:JSON.stringify(payload)
     });
+    if(!response.ok){const details=await response.text();console.error("Supabase error:",response.status,details);throw new Error("Database request failed: "+response.status)}
+    showMessage("Ubusabe bwawe bwoherejwe neza. Murakoze!","success");form.reset();dateInput.min=localDateString();
+  }catch(error){
+    console.error(error);
+    showMessage("Ntibyashobotse kohereza ubusabe. Database ishobora kuba idafite inkingi zikenewe cyangwa RLS policy yo kwemerera kohereza ubusabe.","error");
+  }finally{submitButton.disabled=false;submitButton.textContent="KOHEZA UBUSAbe ↗"}
 });
 </script>
-
 </body>
 </html>
