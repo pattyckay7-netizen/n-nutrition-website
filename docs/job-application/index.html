@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>N-NUTRITION & MARKETING - Gusaba Akazi</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f1f4f3;
+            color: #222;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #087f5b, #0ca678);
+            color: white;
+            text-align: center;
+            padding: 28px 20px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 16px;
+        }
+
+        .photo-container {
+            width: 100%;
+            padding: 18px;
+            background: white;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .announcement {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .announcement h2 {
+            color: #087f5b;
+            margin-bottom: 15px;
+            font-size: 23px;
+        }
+
+        .announcement p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .form-section {
+            padding: 25px;
+        }
+
+        .form-section h2 {
+            color: #087f5b;
+            text-align: center;
+            margin-bottom: 22px;
+            font-size: 23px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+            margin-top: 18px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+            border: 2px solid #087f5b;
+        }
+
+        .submit-button {
+            width: 100%;
+            margin-top: 28px;
+            padding: 16px;
+            border: none;
+            border-radius: 9px;
+            background: #087f5b;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #066b4d;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .page {
+                padding: 8px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .announcement p {
+                font-size: 16px;
+            }
+
+            .form-section,
+            .announcement {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="card">
+
+        <div class="header">
+            <h1>N-NUTRITION & MARKETING</h1>
+            <p>Amahirwe yo kubona akazi</p>
+        </div>
+
+        <!-- YOUR PHOTO -->
+        <div class="photo-container">
+    <img src="./photo.jpg" alt="N-NUTRITION & MARKETING" style="width:100%; height:auto; display:block;">
+</div>
+
+        <!-- ANNOUNCEMENT -->
+        <div class="announcement">
+
+            <h2>📢 ITANGAZO</h2>
+
+            <p>
+                <strong>
+                    Ikigo N-NUTRITION & MARKETING kirigutanga amahirwe
+                    ku Banyarwanda bashaka akazi mu kubafasha gucuruza
+                    ibikoresho bya electronic na nature products.
+                </strong>
+            </p>
+
+        </div>
+
+        <!-- APPLICATION FORM -->
+        <div class="form-section">
+
+            <h2>📝 IFISHI YO GUSABA AKAZI</h2>
+
+            <form id="applicationForm">
+
+                <label for="fullname">
+                    Amazina yose
+                </label>
+
+                <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="Andika amazina yawe yose"
+                    required
+                >
+
+                <label for="phone">
+                    Nimero ya telefoni
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Urugero: 078XXXXXXX"
+                    required
+                >
+
+                <label for="district">
+                    Akarere
+                </label>
+
+                <input
+                    type="text"
+                    id="district"
+                    name="district"
+                    placeholder="Andika Akarere utuyemo"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="submit-button">
+                    OHEREZA UBUSABE
+                </button>
+
+           </form>
+
+        </div>
+
+        <div class="footer">
+            © 2026 N-NUTRITION & MARKETING
+        </div>
+
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://ffthwgjczgfzenqzzhto.supabase.co";
+const SUPABASE_KEY = "sb_publishable_OSFOuk4xaJcPey_GB8Y4Rg_d_2ZAuDV";
+
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("applicationForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const amazina = document.getElementById("fullname").value;
+    const telefone = document.getElementById("phone").value;
+    const akarere = document.getElementById("district").value;
+
+    const { error } = await supabaseClient
+        .from("submissions")
+        .insert([
+            {
+                "amazina yose": amazina,
+    "nimero yatelefoni": telefone,
+    "Akarere": akarere
+            }
+        ]);
+
+    if (error) {
+        alert("Habaye ikibazo: " + error.message);
+    } else {
+        alert("Ubusabe bwawe bwoherejwe neza!");
+        document.getElementById("applicationForm").reset();
+    }
+    });
+});
+</script>
+
+</body>
+</html>
