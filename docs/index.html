@@ -70,6 +70,31 @@ input:focus{border-color:#138044;box-shadow:0 0 0 4px #13804418;background:#fff}
 .footer p{font-size:12px;color:#cde5d3;margin:9px 0 0}
 @media(max-width:800px){main{padding:14px 13px 30px}.content{grid-template-columns:1fr}.info-card{padding:24px}.info-card h2{font-size:23px}.hero{border-radius:17px}.intro{padding:23px 6px}.form-card{padding:22px}.nav{padding:11px 15px}}
 @media(max-width:420px){.brand-name{font-size:13px}.nav-pill{font-size:11px;padding:8px 10px}.intro p{font-size:14px}.form-heading h2{font-size:20px}}
+
+.calendar{border:1px solid #dcebd4;border-radius:15px;background:#fff;padding:13px;margin-top:12px}
+.calendar-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.calendar-month{font-weight:900;color:#08492b;text-transform:capitalize}
+.calendar-nav{width:36px;height:36px;border:1px solid #dcebd4;border-radius:10px;background:#f5faf4;color:#07552d;font-size:20px;font-weight:900;cursor:pointer}
+.calendar-nav:disabled{opacity:.35;cursor:not-allowed}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.calendar-weekday{text-align:center;font-size:11px;font-weight:900;color:#718477;padding:5px 0}
+.calendar-day{min-height:39px;border:1px solid #e4eee5;border-radius:9px;background:#f8fcf7;color:#174c30;font:700 13px inherit;cursor:pointer}
+.calendar-day:hover:not(:disabled),.calendar-day.selected{background:#e5f4df;border-color:#138044;color:#07552d}
+.calendar-day:disabled{background:#f2f3f2;color:#a0aaa2;border-color:#ecefec;cursor:not-allowed;text-decoration:line-through}
+.calendar-day.full{background:#fff0ef;color:#a32118;border-color:#f4d2cf}
+.calendar-day.empty{visibility:hidden}
+.calendar-status{font-size:12px;color:#718477;line-height:1.5;margin:10px 2px 0;min-height:18px}
+.trust-section{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.trust-card{background:#fff;border:1px solid #e0ebe1;border-radius:18px;padding:21px;box-shadow:0 8px 24px #164a290a}
+.trust-card h2{font-size:18px;color:#07552d;margin:0 0 10px}
+.trust-card p,.trust-card li{font-size:13px;line-height:1.65;color:#617568}
+.trust-card ul{padding-left:18px;margin:8px 0}
+.contact-link{display:inline-block;color:#07552d;font-weight:900;text-decoration:none;margin-top:5px}
+.contact-link:hover{text-decoration:underline}
+.footer a{color:#fff;font-weight:800}
+@media(max-width:800px){.trust-section{grid-template-columns:1fr}}
+@media(max-width:420px){.calendar{padding:9px}.calendar-day{min-height:35px;font-size:12px}.calendar-grid{gap:3px}}
+
 </style>
 </head>
 <body>
@@ -107,14 +132,20 @@ input:focus{border-color:#138044;box-shadow:0 0 0 4px #13804418;background:#fff}
         <div class="field"><label for="district">Akarere <span class="req">*</span></label><div class="input-wrap"><span class="input-icon" aria-hidden="true">⌖</span><input id="district" name="district" type="text" placeholder="Andika akarere kawe" autocomplete="address-level2" required></div></div>
         <div class="field"><label for="phone">Nimero ya telephone <span class="req">*</span></label><div class="input-wrap"><span class="input-icon" aria-hidden="true">☎</span><input id="phone" name="phone" type="tel" placeholder="Urugero: 07..." autocomplete="tel" required></div></div>
         <div class="field"><label for="nationalId">Indangamuntu <span class="req">*</span></label><div class="input-wrap"><span class="input-icon" aria-hidden="true">▤</span><input id="nationalId" name="nationalId" type="text" inputmode="numeric" placeholder="Andika nimero y’indangamuntu" required></div></div>
-        <div class="date-field"><label for="appointmentDate">Itariki ya rendez-vous <span class="req">*</span></label><div class="input-wrap"><span class="input-icon" aria-hidden="true">▦</span><input id="appointmentDate" name="appointmentDate" type="date" required></div><p class="helper">Kanda ahari itariki kugira ngo ufungure kalendari uhitemo umunsi wifuza.</p></div>
-        <button id="submitButton" class="submit" type="submit">KOHEZA UBUSAbe ↗</button>
+        <div class="date-field"><label>Itariki ya rendez-vous <span class="req">*</span></label><input id="appointmentDate" name="appointmentDate" type="hidden"><div class="calendar" aria-label="Kalendari yo guhitamo itariki"><div class="calendar-top"><button type="button" id="prevMonth" class="calendar-nav" aria-label="Ukwezi kubanziriza">‹</button><div id="calendarMonth" class="calendar-month" aria-live="polite">Tegereza...</div><button type="button" id="nextMonth" class="calendar-nav" aria-label="Ukwezi gukurikira">›</button></div><div id="calendarGrid" class="calendar-grid"></div><p id="calendarStatus" class="calendar-status" role="status" aria-live="polite">Tegereza kalendari...</p></div><p class="helper">Hitamo itariki igaragara muri kalendari. Amatariki atakiboneka ntashobora guhitwamo.</p></div>
+        <button id="submitButton" class="submit" type="submit">KOHEREZA UBUSABE ↗</button>
         <div id="formMessage" class="message" role="status" aria-live="polite"></div>
         <p class="privacy">Amakuru yawe azoherezwa muri sisitemu yo kwakira ubusabe bwa rendez-vous.</p>
       </form>
     </section>
   </section>
-  <footer class="footer"><div class="footer-values"><span><b>❧</b> IMIRIRE MYIZA</span><span><b>✚</b> UBUZIMA BUZIRA UMUZE</span><span><b>✣</b> IMBARAGA NYINGI</span><span><b>☺</b> UBUZIMA BWIZA</span></div><div class="footer-line"></div><em>Nature Nutrition For Life</em><p>Good Nutrition Today, A Better Tomorrow</p></footer>
+
+  <section class="trust-section" aria-label="Amakuru y'ikigo n'umutekano">
+    <article class="trust-card"><h2>Menya Nature Nutrition For Life</h2><p>Dufasha abantu kwita ku mirire myiza no ku buzima bwiza. Watwandikira cyangwa ukaduhamagara kugira ngo ubone ibisobanuro ku busabe bwawe bwa rendez-vous.</p></article>
+    <article class="trust-card"><h2>Aho ibiro byacu biherereye</h2><ul><li>Kigali, Rwanda</li><li>Rubavu, Rwanda</li><li>Musanze, Rwanda</li></ul><a class="contact-link" href="tel:+250734714087">☎ +250 734 714 087</a><br><a class="contact-link" href="https://wa.me/250734714087" target="_blank" rel="noopener">Twandikire kuri WhatsApp</a></article>
+    <article class="trust-card"><h2>Kurinda amakuru yawe</h2><p>Amakuru utanga akoreshwa mu kwakira no gutegura ubusabe bwawe bwa rendez-vous. Ubu buryo ntibwerekana amakuru y'abandi basabye rendez-vous. Tanga amakuru yawe nyayo kandi uyakoreshe gusa mu gusaba serivisi.</p><p>Indangamuntu isabwa muri iyi fishi; niba utazi impamvu ikenewe, hamagara ikigo mbere yo kohereza ubusabe.</p></article>
+  </section>
+  <footer class="footer"><div class="footer-values"><span><b>❧</b> IMIRIRE MYIZA</span><span><b>✚</b> UBUZIMA BUZIRA UMUZE</span><span><b>✣</b> IMBARAGA NYINGI</span><span><b>☺</b> UBUZIMA BWIZA</span></div><div class="footer-line"></div><em>Nature Nutrition For Life</em><p>Good Nutrition Today, A Better Tomorrow</p><p>Ibiro: Kigali · Rubavu · Musanze | Tel: <a href="tel:+250734714087">+250 734 714 087</a></p><p><a href="https://wa.me/250734714087" target="_blank" rel="noopener">WhatsApp</a> · Amakuru yawe arindwa kandi akoreshwa mu gutegura rendez-vous.</p></footer>
 </main>
 <script>
 const SUPABASE_URL = "https://ffthwgjczgfzenqzzhto.supabase.co";
@@ -123,13 +154,102 @@ const form = document.getElementById("appointmentForm");
 const dateInput = document.getElementById("appointmentDate");
 const message = document.getElementById("formMessage");
 const submitButton = document.getElementById("submitButton");
-function localDateString(){const now=new Date();return new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10)}
-dateInput.min=localDateString();
+const calendarGrid = document.getElementById("calendarGrid");
+const calendarMonthLabel = document.getElementById("calendarMonth");
+const calendarStatus = document.getElementById("calendarStatus");
+const prevMonthButton = document.getElementById("prevMonth");
+const nextMonthButton = document.getElementById("nextMonth");
+const weekdayLabels = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+let visibleMonth = new Date();
+visibleMonth = new Date(visibleMonth.getFullYear(),visibleMonth.getMonth(),1);
+let dailyBookings = new Map();
+let availabilityReady = false;
+let availabilityError = false;
+
+function localDateString(date=new Date()){
+  const y=date.getFullYear(),m=String(date.getMonth()+1).padStart(2,"0"),d=String(date.getDate()).padStart(2,"0");
+  return y+"-"+m+"-"+d;
+}
 function showMessage(text,kind){message.textContent=text;message.className="message show "+kind}
+function dateFromKey(key){const parts=key.split("-").map(Number);return new Date(parts[0],parts[1]-1,parts[2])}
+function monthName(date){return new Intl.DateTimeFormat("rw-RW",{month:"long",year:"numeric"}).format(date)}
+function makeCalendarCell(label,classes,disabled,aria,onClick){
+  const button=document.createElement("button");
+  button.type="button";button.className=classes;button.textContent=label;
+  button.disabled=disabled;if(aria)button.setAttribute("aria-label",aria);
+  if(onClick)button.addEventListener("click",onClick);
+  return button;
+}
+async function loadMonth(){
+  availabilityReady=false;availabilityError=false;
+  calendarStatus.textContent="Tegereza kalendari...";
+  calendarGrid.replaceChildren();
+  calendarMonthLabel.textContent=monthName(visibleMonth);
+  const start=localDateString(new Date(visibleMonth.getFullYear(),visibleMonth.getMonth(),1));
+  const end=localDateString(new Date(visibleMonth.getFullYear(),visibleMonth.getMonth()+1,0));
+  try{
+    const response=await fetch(SUPABASE_URL+"/rest/v1/rpc/get_appointment_day_counts",{
+      method:"POST",
+      headers:{"apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+SUPABASE_ANON_KEY,"Content-Type":"application/json"},
+      body:JSON.stringify({p_start_date:start,p_end_date:end})
+    });
+    if(!response.ok)throw new Error("Could not load availability: "+response.status);
+    const rows=await response.json();
+    dailyBookings=new Map(rows.map(row=>[row.appointment_date,Number(row.booking_count)]));
+    availabilityReady=true;
+    renderCalendar();
+  }catch(error){
+    console.error(error);availabilityError=true;availabilityReady=false;
+    calendarGrid.replaceChildren();
+    calendarStatus.textContent="Ntibyashobotse kureba amatariki aboneka. Ongera ugerageze nyuma.";
+  }
+}
+function renderCalendar(){
+  calendarGrid.replaceChildren();
+  weekdayLabels.forEach(day=>{
+    const label=document.createElement("div");label.className="calendar-weekday";label.textContent=day;calendarGrid.appendChild(label);
+  });
+  const year=visibleMonth.getFullYear(),month=visibleMonth.getMonth();
+  const firstOffset=(new Date(year,month,1).getDay()+6)%7;
+  const daysInMonth=new Date(year,month+1,0).getDate();
+  for(let i=0;i<firstOffset;i++)calendarGrid.appendChild(makeCalendarCell("","calendar-day empty",true,"",null));
+  for(let day=1;day<=daysInMonth;day++){
+    const date=new Date(year,month,day),key=localDateString(date);
+    const count=dailyBookings.get(key)||0;
+    const past=key<localDateString();
+    const full=count>=3;
+    const selected=dateInput.value===key;
+    const classes="calendar-day"+(full?" full":"")+(selected?" selected":"");
+    const aria=key+(full?" - Yuzuye":past?" - Itariki yashize":" - Iraboneka");
+    const button=makeCalendarCell(String(day),classes,past||full,aria,()=>{
+      dateInput.value=key;
+      calendarStatus.textContent="Wahisemo: "+new Intl.DateTimeFormat("rw-RW",{dateStyle:"full"}).format(date);
+      renderCalendar();
+    });
+    calendarGrid.appendChild(button);
+  }
+  prevMonthButton.disabled=(year===new Date().getFullYear()&&month<=new Date().getMonth());
+  nextMonthButton.disabled=false;
+  calendarStatus.textContent=dateInput.value
+    ?"Wahisemo: "+new Intl.DateTimeFormat("rw-RW",{dateStyle:"full"}).format(dateFromKey(dateInput.value))
+    :"Hitamo itariki iboneka muri kalendari.";
+}
+prevMonthButton.addEventListener("click",()=>{
+  if(prevMonthButton.disabled)return;
+  visibleMonth=new Date(visibleMonth.getFullYear(),visibleMonth.getMonth()-1,1);loadMonth();
+});
+nextMonthButton.addEventListener("click",()=>{
+  visibleMonth=new Date(visibleMonth.getFullYear(),visibleMonth.getMonth()+1,1);loadMonth();
+});
+loadMonth();
+
 form.addEventListener("submit",async(event)=>{
   event.preventDefault();
   if(!form.reportValidity())return;
+  if(!dateInput.value){showMessage("Banza uhitemo itariki ya rendez-vous muri kalendari.","error");return}
+  if(!availabilityReady){showMessage("Ntibishobotse kugenzura itariki. Ongera ugerageze.","error");return}
   if(dateInput.value<localDateString()){showMessage("Hitamo itariki y’uyu munsi cyangwa iri imbere.","error");return}
+  if((dailyBookings.get(dateInput.value)||0)>=3){showMessage("Iyi tariki yamaze kuzura. Hitamo indi tariki.","error");await loadMonth();return}
   submitButton.disabled=true;submitButton.textContent="Tegereza...";message.className="message";
   const payload={
     full_name:document.getElementById("fullname").value.trim(),
@@ -139,17 +259,28 @@ form.addEventListener("submit",async(event)=>{
     appointment_date:dateInput.value
   };
   try{
-    const response=await fetch(SUPABASE_URL.replace(/\/$/,"")+"/rest/v1/appointments",{
+    const response=await fetch(SUPABASE_URL+"/rest/v1/appointments",{
       method:"POST",
       headers:{"apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+SUPABASE_ANON_KEY,"Content-Type":"application/json","Prefer":"return=minimal"},
       body:JSON.stringify(payload)
     });
-    if(!response.ok){const details=await response.text();console.error("Supabase error:",response.status,details);throw new Error("Database request failed: "+response.status)}
-    showMessage("Ubusabe bwawe bwoherejwe neza. Murakoze!","success");form.reset();dateInput.min=localDateString();
+    if(!response.ok){
+      const details=await response.text();console.error("Supabase error:",response.status,details);
+      if(details.includes("APPOINTMENT_DATE_FULL")){
+        showMessage("Iyi tariki yamaze kuzura. Hitamo indi tariki.","error");
+        await loadMonth();return;
+      }
+      throw new Error("Database request failed: "+response.status);
+    }
+    showMessage("Ubusabe bwawe bwoherejwe neza. Murakoze!","success");
+    form.reset();dateInput.value="";
+    await loadMonth();
   }catch(error){
     console.error(error);
-    showMessage("Ntibyashobotse kohereza ubusabe. Database ishobora kuba idafite inkingi zikenewe cyangwa RLS policy yo kwemerera kohereza ubusabe.","error");
-  }finally{submitButton.disabled=false;submitButton.textContent="KOHEZA UBUSAbe ↗"}
+    showMessage("Ntibyashobotse kohereza ubusabe. Ongera ugerageze cyangwa uhamagare ikigo.","error");
+  }finally{
+    submitButton.disabled=false;submitButton.textContent="KOHEREZA UBUSABE ↗";
+  }
 });
 </script>
 </body>
