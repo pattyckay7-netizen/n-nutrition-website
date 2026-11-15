@@ -95,6 +95,15 @@ input:focus{border-color:#138044;box-shadow:0 0 0 4px #13804418;background:#fff}
 @media(max-width:800px){.trust-section{grid-template-columns:1fr}}
 @media(max-width:420px){.calendar{padding:9px}.calendar-day{min-height:35px;font-size:12px}.calendar-grid{gap:3px}}
 
+
+.consultation-photo{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(250px,.92fr);gap:0;overflow:hidden;border-radius:22px;background:#eaf4e7;border:1px solid #dcebd4;box-shadow:0 12px 30px #164a2910;margin:0 0 25px}
+.consultation-photo img{display:block;width:100%;height:100%;min-height:270px;max-height:370px;object-fit:cover;object-position:center}
+.consultation-copy{padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;justify-content:center}
+.consultation-copy .eyebrow{align-self:flex-start}
+.consultation-copy h2{font-size:clamp(22px,3vw,31px);line-height:1.15;color:#07552d;margin:14px 0 10px}
+.consultation-copy p{font-size:14px;line-height:1.7;color:#617568;margin:0}
+@media(max-width:700px){.consultation-photo{grid-template-columns:1fr}.consultation-photo img{min-height:220px;max-height:290px}.consultation-copy{padding:22px}}
+
 </style>
 </head>
 <body>
@@ -115,6 +124,14 @@ input:focus{border-color:#138044;box-shadow:0 0 0 4px #13804418;background:#fff}
     <span class="eyebrow">✦ Gusaba rendez-vous</span>
     <h1>Hitamo igihe cyawe.<br><span>Tugufashe kubaho neza.</span></h1>
     <p>Uzuza amakuru yawe hanyuma uhitemo itariki wifuza. Tuzakoresha amakuru watanze kugira ngo tugufashe gukomeza urugendo rw’ubuzima buzira umuze.</p>
+  </section>
+  <section class="consultation-photo" aria-label="Inama ku mirire n'inyongeramirire">
+    <img src="https://images.pexels.com/photos/8844578/pexels-photo-8844578.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Umujyanama mu mirire asobanurira umukiriya ibijyanye n'inyongeramirire y'ibiribwa" loading="lazy">
+    <div class="consultation-copy">
+      <span class="eyebrow">✦ Inama ku mirire</span>
+      <h2>Hitamo imirire myiza n'ubuzima bwiza</h2>
+      <p>Ganira n'umujyanama ku mirire n'inyongeramirire, umenye amakuru agufasha gufata ibyemezo byiza ku buzima bwawe.</p>
+    </div>
   </section>
   <section class="content">
     <aside class="info-card">
